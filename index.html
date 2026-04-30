@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>There Will Be Giants | Joseph Dream Publishing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #c9a535;
+  --gold-light: #e8c96d;
+  --gold-dim: rgba(201,165,53,0.15);
+  --dark: #0a0a0a;
+  --dark2: #101010;
+  --dark3: #181818;
+  --dark4: #1e1e1e;
+  --navy: #0d1b2e;
+  --white: #f5f5f5;
+  --gray: #888;
+  --gray-light: #bbb;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ==================== NAV ==================== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3.5rem;
+  background: rgba(10,10,10,0.96);
+  border-bottom: 1px solid var(--gold-dim);
+  backdrop-filter: blur(8px);
+}
+
+.nav-logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--gray-light);
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover { color: var(--gold); }
+.nav-sep { color: var(--gold-dim); font-size: 1rem; }
+
+/* ==================== HERO ==================== */
+.hero {
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ==================== TICKER ==================== */
+.ticker {
+  background: var(--gold);
+  padding: 0.9rem 2rem;
+  text-align: center;
+}
+
+.ticker p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #0a0a0a;
+  text-transform: uppercase;
+}
+
+/* ==================== SERIES OVERVIEW ==================== */
+.series-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  padding: 6rem 5rem;
+  background: var(--dark2);
+}
+
+.series-left h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.8rem;
+  line-height: 1.05;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  margin-bottom: 2rem;
+}
+
+.series-left p {
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: var(--gray-light);
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.info-table tr {
+  border-bottom: 1px solid var(--gold-dim);
+}
+
+.info-table tr:first-child {
+  border-top: 1px solid var(--gold-dim);
+}
+
+.info-table td {
+  padding: 1.1rem 1.25rem;
+  vertical-align: middle;
+}
+
+.info-table td.label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  border-left: 3px solid var(--gold);
+  background: rgba(201,165,53,0.04);
+  width: 130px;
+  white-space: nowrap;
+}
+
+.info-table td.value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--dark3);
+}
+
+/* ==================== QUOTE CARDS ==================== */
+.quotes-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--dark);
+  border-top: 1px solid var(--gold-dim);
+  border-bottom: 1px solid var(--gold-dim);
+}
+
+.quote-card {
+  padding: 3.5rem 3.5rem;
+  position: relative;
+}
+
+.quote-card:first-child {
+  border-right: 1px solid var(--gold-dim);
+}
+
+.quote-mark {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 6rem;
+  line-height: 0.6;
+  color: var(--gold);
+  opacity: 0.45;
+  margin-bottom: 1.5rem;
+}
+
+.quote-card blockquote {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--white);
+  font-weight: 300;
+  margin-bottom: 1.75rem;
+}
+
+.quote-attr {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ==================== BOOK SECTION ==================== */
+.book-section {
+  padding: 5rem 5rem 4rem;
+  background: var(--dark2);
+  border-top: 1px solid var(--gold-dim);
+  position: relative;
+  overflow: hidden;
+}
+
+.book-section:nth-child(even) {
+  background: var(--dark);
+}
+
+.bg-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18rem;
+  color: rgba(255,255,255,0.025);
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.part-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.part-eyebrow .sep {
+  color: var(--gray);
+  margin: 0 0.6rem;
+}
+
+.part-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.part-subtitle {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+/* Featured Card */
+.featured-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background: var(--navy);
+  border: 1px solid rgba(201,165,53,0.18);
+  margin-bottom: 3rem;
+  min-height: 320px;
+}
+
+.featured-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featured-info {
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.featured-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.featured-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  line-height: 1;
+}
+
+.featured-quote {
+  border-left: 3px solid var(--gold);
+  padding-left: 1.25rem;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--gray-light);
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+}
+
+.featured-blurb {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--gray);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.featured-meta {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  border-top: 1px solid var(--gold-dim);
+  padding-top: 1.25rem;
+}
+
+/* Companion Volumes */
+.companion-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gold-dim);
+}
+
+.companion-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.companion-item {
+  background: var(--dark3);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: border-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.companion-item:hover {
+  border-color: rgba(201,165,53,0.35);
+  transform: translateY(-5px);
+}
+
+.companion-cover {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+}
+
+.companion-meta {
+  padding: 1rem 1rem 1.25rem;
+}
+
+.companion-badge {
+  display: inline-block;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: var(--gold);
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.companion-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
+}
+
+.companion-quote {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--gray);
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+/* ==================== AUTHOR BIO ==================== */
+.author-section {
+  background: var(--dark);
+  padding: 6rem 5rem;
+  border-top: 1px solid var(--gold-dim);
+}
+
+.author-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.photo-wrap {
+  position: relative;
+}
+
+.photo-wrap img {
+  width: 100%;
+  display: block;
+  filter: grayscale(100%);
+  position: relative;
+  z-index: 1;
+}
+
+.photo-frame {
+  position: relative;
+}
+
+.photo-frame::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  left: 8px;
+  top: 8px;
+  border: 2px solid var(--gold);
+  z-index: 0;
+}
+
+.bio-content {
+  padding-top: 0.5rem;
+}
+
+.bio-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.bio-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.bio-titles {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+  line-height: 2;
+}
+
+.bio-titles .dot {
+  color: var(--gold);
+  margin: 0 0.5rem;
+}
+
+.bio-text {
+  font-size: 0.93rem;
+  line-height: 1.95;
+  color: var(--gray-light);
+  font-weight: 300;
+}
+
+/* Bio Blockquotes */
+.bio-quotes {
+  background: var(--dark);
+  padding: 0 5rem 6rem;
+}
+
+.bio-quote-item {
+  border-left: 3px solid var(--gold);
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--gray-light);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  background: #060606;
+  border-top: 1px solid var(--gold-dim);
+  padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer-copy {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+.footer-site {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.footer-site:hover { color: var(--gold-light); }
+
+@keyframes goldPulse {
+  0%, 100% { 
+    color: #c9a535; 
+    text-shadow: 0 0 10px rgba(201,165,53,0.3);
+  }
+  50% { 
+    color: #e8c96d; 
+    text-shadow: 0 0 25px rgba(232,201,109,0.8), 0 0 50px rgba(201,165,53,0.4);
+  }
+}
+
+@keyframes fadeGlow {
+  0%, 100% { opacity: 0.7; letter-spacing: 0.2em; }
+  50% { opacity: 1; letter-spacing: 0.22em; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== NAV ==================== -->
+<nav>
+  <a href="#" class="nav-logo">Sandra Ekpenyong</a>
+  <ul class="nav-links">
+    <li><a href="https://thesandrae.com">TheSandrae.com</a></li>
+    <li class="nav-sep">|</li>
+    <li><a href="#">Books</a></li>
+    <li class="nav-sep">|</li>
+    <li><a href="#">Speaking</a></li>
+    <li class="nav-sep">|</li>
+    <li><a href="#">Online Classes</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <img referrerpolicy="no-referrer" src="Book%204%20(1).png" alt="The Giant Slayer Journey Series">
+</section>
+
+<!-- ==================== TICKER ==================== -->
+<div class="ticker">
+  <p>PRE-ORDER OPENS OCTOBER 2028 &bull; SERIES RELEASES 2029 &bull; 5 PARTS &bull; 25 VOLUMES &bull; THESANDRAE.COM</p>
+</div>
+
+<!-- ==================== SERIES OVERVIEW ==================== -->
+<section class="series-overview">
+  <div class="series-left">
+    <h2>THE GIANT SLAYER<br>JOURNEY SERIES</h2>
+    <p>Five transformational volumes. One prophetic journey. Sandra Ekpenyong's landmark series takes readers from the moment of first recognition through to the fullness of legacy, equipping each warrior for every stage of the battle.</p>
+    <p>Each part includes a main book, workbook, 30 Day Devotional, Facilitator Guide, and Participant Guide. A complete ecosystem built for individual transformation and group discipleship.</p>
+  </div>
+  <div class="series-right">
+    <table class="info-table">
+      <tr>
+        <td class="label">Series</td>
+        <td class="value">There Will Be Giants</td>
+      </tr>
+      <tr>
+        <td class="label">Author</td>
+        <td class="value">Sandra Ekpenyong</td>
+      </tr>
+      <tr>
+        <td class="label">Publisher</td>
+        <td class="value">Joseph Dream Publishing</td>
+      </tr>
+      <tr>
+        <td class="label">Volumes</td>
+        <td class="value">5 Parts &bull; 25 Total Books</td>
+      </tr>
+      <tr>
+        <td class="label">Release</td>
+        <td class="value">2029</td>
+      </tr>
+      <tr>
+        <td class="label">Pre-Order</td>
+        <td class="value">Opens October 2028</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== QUOTE CARDS ==================== -->
+<section class="quotes-section">
+  <div class="quote-card">
+    <span class="quote-mark">&ldquo;</span>
+    <blockquote>Your giant was not born the day you noticed it. It has been growing in the shadows of every delay, every detour, and every door that would not open.</blockquote>
+    <p class="quote-attr">Sandra Ekpenyong &bull; There Will Be Giants, Part 1</p>
+  </div>
+  <div class="quote-card">
+    <span class="quote-mark">&ldquo;</span>
+    <blockquote>The generation behind you is watching how you handle what almost destroyed you. Lead accordingly.</blockquote>
+    <p class="quote-attr">Sandra Ekpenyong &bull; Becoming a Giant Slayer, Part 5</p>
+  </div>
+</section>
+
+<!-- ==================== PART 1 ==================== -->
+<section class="book-section">
+  <div class="bg-number">01</div>
+  <p class="part-eyebrow">Part One <span class="sep">|</span> Identify</p>
+  <h2 class="part-title">THERE WILL BE GIANTS</h2>
+  <p class="part-subtitle">Identifying Your Giants Early</p>
+  <div class="featured-card">
+    <img referrerpolicy="no-referrer" class="featured-cover" src="k86%20FRONT%20COVER.jpg" alt="There Will Be Giants">
+    <div class="featured-info">
+      <div>
+        <p class="featured-tag">Main Book &bull; Part One</p>
+        <h3 class="featured-title">THERE WILL BE GIANTS</h3>
+        <blockquote class="featured-quote">The giant you refuse to name is the one that will name you.</blockquote>
+        <p class="featured-blurb">What if your giant has been in the room longer than you think? This groundbreaking first volume equips you to identify the ancient patterns, generational forces, and spiritual opponents that have been shaping your story before you ever named them.</p>
+      </div>
+      <p class="featured-meta">Sandra Ekpenyong &bull; Joseph Dream Publishing &bull; 2029</p>
+    </div>
+  </div>
+  <p class="companion-label">Companion Volumes</p>
+  <div class="companion-grid">
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="FRONT%20COVER%20W.jpg" alt="There Will Be Giants Workbook">
+      <div class="companion-meta">
+        <span class="companion-badge">Workbook</span>
+        <p class="companion-title">There Will Be Giants Workbook</p>
+        <p class="companion-quote">Identification is the first act of warfare. You cannot defeat what you refuse to see.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="Front%20(1).jpg" alt="There Will Be Giants Devotional">
+      <div class="companion-meta">
+        <span class="companion-badge">30 Day Devotional</span>
+        <p class="companion-title">There Will Be Giants Devotional</p>
+        <p class="companion-quote">God never promised you a life without giants. He promised you would never face one alone.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="There_Will_Be_Giants_Facilitator_Teal.png" alt="There Will Be Giants Facilitator Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Facilitator Guide</span>
+        <p class="companion-title">There Will Be Giants Facilitator Guide</p>
+        <p class="companion-quote">Your giant was not born the day you noticed it. It has been growing in the shadows of every delay, every detour, and every door that would not open.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="There_Will_Be_Giants_Participant_Purple.png" alt="There Will Be Giants Participant Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Participant Guide</span>
+        <p class="companion-title">There Will Be Giants Participant Guide</p>
+        <p class="companion-quote">Every giant in your life arrived with a purpose. The question is whether it will refine you or define you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PART 2 ==================== -->
+<section class="book-section">
+  <div class="bg-number">02</div>
+  <p class="part-eyebrow">Part Two <span class="sep">|</span> Confront</p>
+  <h2 class="part-title">CONFRONTING YOUR GIANTS</h2>
+  <p class="part-subtitle">Summoning Courage to Challenge Your Giant</p>
+  <div class="featured-card">
+    <img referrerpolicy="no-referrer" class="featured-cover" src="CG4.jpg" alt="Confronting Your Giants">
+    <div class="featured-info">
+      <div>
+        <p class="featured-tag">Main Book &bull; Part Two</p>
+        <h3 class="featured-title">CONFRONTING YOUR GIANTS</h3>
+        <blockquote class="featured-quote">The moment you turn to face your giant, the giant loses its greatest weapon. Your back.</blockquote>
+        <p class="featured-blurb">Identification was the beginning. Now comes the confrontation. This volume arms you with the courage, strategy, and prophetic clarity to look your giant in the eye and declare the battle is already won.</p>
+      </div>
+      <p class="featured-meta">Sandra Ekpenyong &bull; Joseph Dream Publishing &bull; 2029</p>
+    </div>
+  </div>
+  <p class="companion-label">Companion Volumes</p>
+  <div class="companion-grid">
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="CG3.jpg" alt="Confronting Your Giants Workbook">
+      <div class="companion-meta">
+        <span class="companion-badge">Workbook</span>
+        <p class="companion-title">Confronting Your Giants Workbook</p>
+        <p class="companion-quote">Avoiding your giant does not make it smaller. It makes you smaller.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="CG5.jpg" alt="Confronting Your Giants Devotional">
+      <div class="companion-meta">
+        <span class="companion-badge">30 Day Devotional</span>
+        <p class="companion-title">Confronting Your Giants Devotional</p>
+        <p class="companion-quote">Courage is not the absence of fear. It is the decision that your destiny is worth more than your comfort.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="Cg1.png" alt="Confronting Your Giants Facilitator Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Facilitator Guide</span>
+        <p class="companion-title">Confronting Your Giants Facilitator Guide</p>
+        <p class="companion-quote">God never sends you into battle as a spectator. You were always meant to be the main event.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="Cg2.png" alt="Confronting Your Giants Participant Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Participant Guide</span>
+        <p class="companion-title">Confronting Your Giants Participant Guide</p>
+        <p class="companion-quote">Your giant is not standing between you and failure. It is standing between you and your breakthrough.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PART 3 ==================== -->
+<section class="book-section">
+  <div class="bg-number">03</div>
+  <p class="part-eyebrow">Part Three <span class="sep">|</span> Destroy</p>
+  <h2 class="part-title">SLAYING YOUR GIANTS</h2>
+  <p class="part-subtitle">Overcoming Your Giant to Secure Your Destiny</p>
+  <div class="featured-card">
+    <img referrerpolicy="no-referrer" class="featured-cover" src="Sg3.jpg" alt="Slaying Your Giants">
+    <div class="featured-info">
+      <div>
+        <p class="featured-tag">Main Book &bull; Part Three</p>
+        <h3 class="featured-title">SLAYING YOUR GIANTS</h3>
+        <blockquote class="featured-quote">There is one giant in your life that, when it falls, everything else aligns. Find it. Face it. Finish it.</blockquote>
+        <p class="featured-blurb">The strategy is set. The stone is in your hand. This volume delivers the tactical, spiritual, and emotional framework for the moment of decisive victory. The moment your giant falls and your destiny is secured.</p>
+      </div>
+      <p class="featured-meta">Sandra Ekpenyong &bull; Joseph Dream Publishing &bull; 2029</p>
+    </div>
+  </div>
+  <p class="companion-label">Companion Volumes</p>
+  <div class="companion-grid">
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="Sg2.jpg" alt="Slaying Your Giants Workbook">
+      <div class="companion-meta">
+        <span class="companion-badge">Workbook</span>
+        <p class="companion-title">Slaying Your Giants Workbook</p>
+        <p class="companion-quote">One giant falls and a generation rises. That is not coincidence. That is the design.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="SG5.jpg" alt="Slaying Your Giants Devotional">
+      <div class="companion-meta">
+        <span class="companion-badge">30 Day Devotional</span>
+        <p class="companion-title">Slaying Your Giants Devotional</p>
+        <p class="companion-quote">David did not defeat Goliath in spite of his smallness. He defeated him because of his clarity.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="SG4.png" alt="Slaying Your Giants Facilitator Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Facilitator Guide</span>
+        <p class="companion-title">Slaying Your Giants Facilitator Guide</p>
+        <p class="companion-quote">Strategy without faith is a plan. Faith without strategy is a wish. Your destiny requires both.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="Sg1.png" alt="Slaying Your Giants Participant Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Participant Guide</span>
+        <p class="companion-title">Slaying Your Giants Participant Guide</p>
+        <p class="companion-quote">The stone you throw today was shaped in every valley you survived yesterday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PART 4 ==================== -->
+<section class="book-section">
+  <div class="bg-number">04</div>
+  <p class="part-eyebrow">Part Four <span class="sep">|</span> Become</p>
+  <h2 class="part-title">BECOMING A GIANT SLAYER</h2>
+  <p class="part-subtitle">Why Slaying Your Own Giant Attains You Greatness</p>
+  <div class="featured-card">
+    <img referrerpolicy="no-referrer" class="featured-cover" src="BAG3.jpg" alt="Becoming a Giant Slayer">
+    <div class="featured-info">
+      <div>
+        <p class="featured-tag">Main Book &bull; Part Four</p>
+        <h3 class="featured-title">BECOMING A GIANT SLAYER</h3>
+        <blockquote class="featured-quote">The giant slayer does not just defeat obstacles. They dismantle the belief that obstacles cannot be defeated.</blockquote>
+        <p class="featured-blurb">This is where the giant slayer is fully formed. Not just one who defeats obstacles but one who has been transformed by the process. This is the culmination of the journey and the beginning of your legacy.</p>
+      </div>
+      <p class="featured-meta">Sandra Ekpenyong &bull; Joseph Dream Publishing &bull; 2029</p>
+    </div>
+  </div>
+  <p class="companion-label">Companion Volumes</p>
+  <div class="companion-grid">
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="BAG4.jpg" alt="Becoming a Giant Slayer Workbook">
+      <div class="companion-meta">
+        <span class="companion-badge">Workbook</span>
+        <p class="companion-title">Becoming a Giant Slayer Workbook</p>
+        <p class="companion-quote">One victory makes you a winner. A lifetime of victories makes you a giant slayer. The difference is character.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="BAG5.jpg" alt="Becoming a Giant Slayer Devotional">
+      <div class="companion-meta">
+        <span class="companion-badge">30 Day Devotional</span>
+        <p class="companion-title">Becoming a Giant Slayer Devotional</p>
+        <p class="companion-quote">Greatness is not what you achieve. It is what you become in the process of achieving it.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="BAG2.jpg" alt="Becoming a Giant Slayer Facilitator Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Facilitator Guide</span>
+        <p class="companion-title">Becoming a Giant Slayer Facilitator Guide</p>
+        <p class="companion-quote">Every battle you survive is training ground for someone watching you who does not yet have your courage.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="BAG1.png" alt="Becoming a Giant Slayer Participant Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Participant Guide</span>
+        <p class="companion-title">Becoming a Giant Slayer Participant Guide</p>
+        <p class="companion-quote">You were not built to win once. You were built to win consistently, lead courageously, and inspire endlessly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ==================== PART 5 ==================== -->
+<section class="book-section">
+  <div class="bg-number">05</div>
+  <p class="part-eyebrow">Part Five <span class="sep">|</span> Raise</p>
+  <h2 class="part-title">RAISING GIANT SLAYERS</h2>
+  <p class="part-subtitle">How Mentoring Secures Your Legacy</p>
+  <div class="featured-card">
+    <img referrerpolicy="no-referrer" class="featured-cover" src="RG5.jpg" alt="Raising Giant Slayers">
+    <div class="featured-info">
+      <div>
+        <p class="featured-tag">Main Book &bull; Part Five</p>
+        <h3 class="featured-title">RAISING GIANT SLAYERS</h3>
+        <blockquote class="featured-quote">Your greatest legacy is not the giant you slayed. It is the warrior you raised who slayed their own.</blockquote>
+        <p class="featured-blurb">Your legacy is not just what you build. It is who you build it through. This volume reveals the sacred responsibility of the giant slayer turned mentor and how your battle victory multiplies through the warriors you raise.</p>
+      </div>
+      <p class="featured-meta">Sandra Ekpenyong &bull; Joseph Dream Publishing &bull; 2029</p>
+    </div>
+  </div>
+  <p class="companion-label">Companion Volumes</p>
+  <div class="companion-grid">
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="RG4.jpg" alt="Raising Giant Slayers Workbook">
+      <div class="companion-meta">
+        <span class="companion-badge">Workbook</span>
+        <p class="companion-title">Raising Giant Slayers Workbook</p>
+        <p class="companion-quote">David turned outcasts into mighty men. Your brokenness is not a disqualifier. It is your qualification to lead.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="RG3.jpg" alt="Raising Giant Slayers Devotional">
+      <div class="companion-meta">
+        <span class="companion-badge">30 Day Devotional</span>
+        <p class="companion-title">Raising Giant Slayers Devotional</p>
+        <p class="companion-quote">Mentorship is how your victory multiplies beyond your lifetime.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="RG2.png" alt="Raising Giant Slayers Facilitator Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Facilitator Guide</span>
+        <p class="companion-title">Raising Giant Slayers Facilitator Guide</p>
+        <p class="companion-quote">True impact is not measured by the battles you won but by the warriors you sent into battle after you.</p>
+      </div>
+    </div>
+    <div class="companion-item">
+      <img referrerpolicy="no-referrer" class="companion-cover" src="RG1.png" alt="Raising Giant Slayers Participant Guide">
+      <div class="companion-meta">
+        <span class="companion-badge">Participant Guide</span>
+        <p class="companion-title">Raising Giant Slayers Participant Guide</p>
+        <p class="companion-quote">The generation behind you is watching how you handle what almost destroyed you. Lead accordingly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AUTHOR BIO ====================-->
+<section class="author-section">
+  <div style="display:grid; grid-template-columns: 340px 1fr; gap:3.5rem; align-items:start;">
+    
+    <!-- Author Photo -->
+    <div style="position:relative;">
+      <img referrerpolicy="no-referrer" src="ChatGPT%20Image%20Apr%2017%2C%202026%2C%2010_03_14%20AM.png" alt="Sandra Ekpenyong" style="width:100%; display:block; filter:grayscale(100%); position:relative; z-index:1;">
+      <div style="position:absolute; bottom:-8px; right:-8px; left:8px; top:8px; border:2px solid #c9a535; z-index:0;"></div>
+    </div>
+
+    <!-- Bio Text -->
+    <div style="padding-top:0.5rem;">
+      <p style="font-size:0.62rem; font-weight:700; letter-spacing:0.28em; color:#c9a535; text-transform:uppercase; margin-bottom:0.75rem;">About the Author</p>
+      <h2 style="font-family:'Bebas Neue',sans-serif; font-size:3.5rem; letter-spacing:0.04em; color:#f5f5f5; line-height:1; margin-bottom:0.6rem;">SANDRA EKPENYONG</h2>
+      <p style="font-size:0.62rem; font-weight:700; letter-spacing:0.18em; color:#888; text-transform:uppercase; margin-bottom:1.75rem; line-height:2;">
+        Forensic Biblical Storyteller <span style="color:#c9a535; margin:0 0.5rem;">&bull;</span> Publishing Strategist <span style="color:#c9a535; margin:0 0.5rem;">&bull;</span> Cultural Thought Leader
+      </p>
+      <p style="font-size:0.93rem; line-height:1.95; color:#bbb; font-weight:300; margin-bottom:2rem;">Sandra Ekpenyong is a forensic biblical storyteller, publishing strategist, and cultural thought leader whose work explores the intersection of faith, leadership, and human behavior. She is the founder of World Harvest International Ministries and Joseph Dream Publishing, where she develops transformational content and frameworks centered on identity, power, and emotional restoration, while helping authors build books and scalable intellectual property ecosystems. Sandra has contributed to global conversations on women, crisis, and resilience. She served as a panelist with Voice of America on the Chibok Girls abduction, participating alongside human rights advocates, policymakers, and global voices engaged in addressing the crisis and its aftermath. With a background in Political Science from the University of Maryland and over two decades of leadership experience, Sandra's work uncovers hidden emotional and behavioral patterns within individuals and systems. Through her writing, speaking, and publishing platforms, she equips individuals to confront silence, reclaim identity, and lead with clarity, integrity, and purpose.</p>
+
+      <!-- Slingshot embedded below bio text with quote overlay -->
+      <div style="position:relative; overflow:hidden; height:200px; margin-top:1rem;">
+        <img referrerpolicy="no-referrer" src="shutterstock_1033850887.jpg" alt="Slingshot and Stones" style="width:100%; height:100%; object-fit:cover; object-position:center; filter:grayscale(100%) brightness(0.35); display:block;">
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1rem;">
+          <p style="font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:0.12em; color:#c9a535; margin-bottom:0.5rem; text-align:center; animation: goldPulse 2.5s ease-in-out infinite;">ONE STONE. ONE MOMENT. ONE DESTINY.</p>
+          <p style="font-size:0.75rem; letter-spacing:0.2em; color:#f5f5f5; text-transform:uppercase; font-weight:300; text-align:center; font-style:italic; animation: fadeGlow 2.5s ease-in-out infinite 0.5s;">"The giant does not fall by accident. It falls because you showed up."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BIO QUOTES ==================== -->
+<div class="bio-quotes">
+  <p class="bio-quote-item">"The giant you refuse to name is the one that will name you."</p>
+  <p class="bio-quote-item">"Your greatest legacy is not the giant you slayed. It is the warrior you raised who slayed their own."</p>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <a href="#" class="footer-logo">Sandra Ekpenyong</a>
+  <p class="footer-copy">&copy; 2025 Joseph Dream Publishing. All Rights Reserved.</p>
+  <a href="https://thesandrae.com" class="footer-site">TheSandrae.com</a>
+</footer>
+
+</body>
+</html>
